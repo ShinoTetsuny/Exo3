@@ -1,0 +1,34 @@
+flash_messages:
+  subject:
+    success:
+      edit: 'La Matiére a été modifier avec succes'
+      delete: 'La Matiére et les notes associé a elle on bien été supprimer'
+      create: 'La Matiére a été crée avec bravoure'
+    error: "Une erreur c'est produite"
+  grade:
+    success:
+      create: 'La note a été crée avec Vigouresement'
+    error:
+      subject: 'Aucune Matiere disponible, veuillez en crée une.'
+
+twig:
+  subject:
+    coeff: 'Coefficiant'
+    average: 'Moyenne'
+    name: 'Nom de la Matiére'
+    grades: 'Notes'
+    grade: 'Note'
+    date: 'Date'
+    delete: 'Supprimé'
+  grade:
+    grade: 'Note'
+    subject: 'Matiére'
+    coefficient: 'Coefficient'
+    date: 'Date'
+
+navbar:
+  subject: 'Matiéres'
+  home: 'Accueil'
+
+form: 
+  error: 'Une ou des erreurs on été commise dans le formulaires'

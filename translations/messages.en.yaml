@@ -1,0 +1,34 @@
+flash_messages:
+  subject:
+    success:
+      edit: 'The subject has been successfully edited'
+      delete: 'The subject and its associated grades have been successfully deleted'
+      create: 'The subject has been created with bravery'
+    error: 'An error occurred'
+  grade:
+    success:
+      create: 'The grade has been created with vigor'
+    error:
+      subject: 'No subjects available, please create one.'
+
+twig:
+  subject:
+    coeff: 'Coefficient'
+    average: 'Average'
+    name: 'Subject Name'
+    grades: 'Grades'
+    grade: 'Grade'
+    date: 'Date'
+    delete: 'Delete'
+  grade:
+    grade: 'Grade'
+    subject: 'Subject'
+    coefficient: 'Coefficient'
+    date: 'Date'
+
+navbar:
+  subject: 'Subjects'
+  home: 'Home'
+
+form: 
+  error: 'One or multiple error as been commitated in this form'

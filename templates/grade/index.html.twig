@@ -1,0 +1,53 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<style>
+    .grades-container {
+       display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .grade {
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+
+    .form-container {
+        max-width: 400px;
+        margin: auto;
+        margin-top: 20px;
+    }
+</style>
+
+<div class="grades-container">
+    {% for grade in grades %}
+        <div class="grade">
+            <p>{{ 'twig.grade.grade'|trans }}: {{ grade.value }}</p>
+            <p>{{ 'twig.grade.subject'|trans }}: {{ grade.subject.name }}</p>
+            <p>{{ 'twig.grade.coefficient'|trans }}: {{ grade.subject.coefficient }}</p>
+            <p>{{ 'twig.grade.date'|trans }}: {{ grade.createdAt|date('Y-m-d H:i:s') }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="form-container">
+    {{ form_start(form) }}
+
+        {{ form_label(form.value, 'twig.grade.grade'|trans) }}
+        {{ form_widget(form.value) }}
+        {{form_errors(form.value)}}
+        
+
+        {{ form_label(form.subject, 'twig.grade.subject'|trans) }}
+        {{ form_widget(form.subject, { 'placeholder': 'No subject' }) }}
+        {{form_errors(form.subject)}}
+
+        {{ form_widget(form.submit, {'attr': {'class': 'btn btn-primary'}}) }}
+    {{ form_end(form) }}
+</div>
+
+{% endblock %}

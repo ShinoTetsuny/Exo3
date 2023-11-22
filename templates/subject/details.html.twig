@@ -1,0 +1,49 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<style>
+    .form-container {
+        max-width: 400px;
+        margin: auto;
+    }
+
+    .grades-container {
+        margin-top: 20px;
+    }
+
+    .grade {
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="grades-container">
+    <h2>{{ 'twig.subject.grades'|trans({ '{{ detail.name }}': detail.name }) }}</h2>
+    {% for grade in detail.grade %}
+        <div class="grade">
+            <p>{{ 'twig.grade.grade'|trans }}: {{ grade.value }}</p>
+            <p>{{ 'twig.grade.date'|trans }}: {{ grade.createdAt|date('Y-m-d H:i:s') }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="form-container">
+    {{ form_start(form) }}
+
+        {{ form_label(form.name, 'twig.subject.name'|trans) }}
+        {{ form_widget(form.name) }}
+        {{ form_errors(form.name) }}
+
+        {{ form_label(form.coefficient, 'twig.subject.coeff'|trans) }}
+        {{ form_widget(form.coefficient) }}
+        {{ form_errors(form.coefficient) }}
+
+        {{ form_widget(form.submit, {'attr': {'class': 'btn btn-primary'}}) }}
+    {{ form_end(form) }}
+    
+    <a href="{{ path('app_subject_delete', {'id': detail.id}) }}" class="btn btn-danger" onclick="return confirm('{{ 'twig.flash_messages.subject.success.delete'|trans }}')">{{ 'twig.subject.delete'|trans }}</a>
+</div>
+
+{% endblock %}

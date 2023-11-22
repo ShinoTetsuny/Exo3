@@ -3,3 +3,8 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+app_change_locale:
+    path: '/change-locale/{locale}'
+    controller: 'App\Controller\LocaleController::changeLocale'
+
